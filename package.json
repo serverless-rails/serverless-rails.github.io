@@ -8,7 +8,8 @@
     "clean": "bundle exec bridgetown clean",
     "webpack-build": "webpack --mode production",
     "webpack-dev": "webpack --mode development -w",
-    "deploy": "yarn clean && yarn webpack-build && yarn build",
+    "deploy": "aws s3 sync --profile serverless-rails output/ s3://serverless-rails-com/",
+    "release": "yarn clean && yarn webpack-build && yarn build && yarn deploy",
     "sync": "node sync.js",
     "start": "node start.js"
   },
