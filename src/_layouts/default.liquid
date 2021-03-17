@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% capture page_title %}{{ page.title | strip_html | strip_newlines }}{% endcapture %}
+    <title>{% if page_title != "" %}{{ page_title | escape }} | {{ site.metadata.title | escape }}{% else %}{{ site.metadata.title | escape }}: {{ site.metadata.tagline | escape }}{% endif %}</title>
+
+    <meta name="description" content="{{ site.metadata.description }}" />
+
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Inter:300,400,600&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% webpack_path css %}" />
+  </head>
+  <body>
+    {{ content }}
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js"></script>
+    <script src="{% webpack_path js %}"></script>
+  </body>
+</html>

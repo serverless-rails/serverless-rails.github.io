@@ -1,0 +1,94 @@
+---
+layout: default
+---
+
+<main class="text-center container mx-auto">
+  <div class="max-w-screen-lg xl:max-w-screen-xl mx-auto pt-10 md:pt-36 pb-36">
+    <h1 class="logotype neon animated">Serverless Rails</h1>
+    <div class="caveat">Sort of!?</div>
+  </div>
+
+  <div class="mt-0 mb-36 flex justify-center">
+    <div class="coming-soon-msg text-shadow-sm">
+      Coming <span x-data='comingSoon()' x-init='init()' x-text='msg'></span>...
+    </div>
+  </div>
+
+  <div class="max-w-screen-md mx-auto mt-0 md:mt-36">
+    <p class="text-2xl text-center text-neon-blue">
+      Learn how to deploy a dockerised Ruby on Rails application
+      on AWS using only 'serverless' products:
+    </p>
+  </div>
+
+  <div class="max-w-screen-lg mx-auto mt-8">
+    <ul class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 grid-rows-2 gap-4 px-2 md:px-0">
+      <li class="service-item neon dancing">Fargate (ECS)</li>
+      <li class="service-item neon dancing">Aurora Serverless</li>
+      <li class="service-item neon dancing">S3 & CloudFront</li>
+      <li class="service-item neon dancing">Elasticache</li>
+      <li class="service-item neon dancing">Route53 & ACM</li>
+      <li class="service-item neon dancing">SSM Parameters</li>
+    </ul>
+  </div>
+
+  <div class="max-w-screen-lg mx-auto mt-36 mb-36">
+    <h3 class="mt-24 faq-q">I'm supposed to click through all that in the AWS Console?</h3>
+    <p class="faq-a">
+      What? No, silly. It's provisioned with&nbsp;
+      <a class="ext-link" href="http://terraform.io">Terraform</a>,
+      and nearly zero manual setup in AWS console. Sign up, make an IAM
+      user... that's it!
+      &nbsp;<abbrev class="cursor-pointer border-dotted border-b text-sm text-gray-300" title="Bring Your Own Domain">BYOD</abbrev>
+    </p>
+
+    <h3 class="mt-24 faq-q">So this is a course or a book or something?</h3>
+    <p class="faq-a">
+      Sort of! It's more like a 'thing on the internet'.
+    </p>
+
+    <h3 class="mt-24 faq-q">...but how much does it cost?</h3>
+    <p class="faq-a">
+      How about sending %5 of what you make this month to your favourite charity.<br />
+      Don't have a favourite? Try these:
+    </p>
+    <div class="mt-4 sm:flex sm:flex-column md:block">
+      <a class="button" href="https://girlswhocode.com/en-ca" target="_blank" rel="noopener">Girls Who Code</a>&nbsp;
+      <a class="button" href="https://humanecanada.ca/" target="_blank" rel="noopener">Humane Canada</a>&nbsp;
+    </div>
+  </div>
+
+  <div class="max-w-screen-md mx-auto mt-0 md:mt-28">
+    <p class="text-2xl text-center text-neon-blue">
+      It's mostly vanilla Rails, but in the real world you inevitably end up with
+      extra bits, so this project uses some of those:
+    </p>
+  </div>
+
+  <div class="max-w-screen-lg mx-auto mt-8">
+    <ul class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 grid-rows-3 lg:grid-rows-1 gap-4 px-2 md:px-0">
+      <li class="service-item neon dancing"><a class="ext-link" href="https://github.com/heartcombo/devise" rel="noreferrer" target="_blank">Devise</a></li>
+      <li class="service-item neon dancing"><a class="ext-link" href="https://sidekiq.org/" rel="noreferrer" target="_blank">Sidekiq</a></li>
+      <li class="service-item neon dancing"><a class="ext-link" href="https://anycable.io/" rel="noreferrer" target="_blank">AnyCable</a></li>
+    </ul>
+  </div>
+
+  <div class="max-w-screen-lg mx-auto mt-40 mb-40">
+    <h3 class="faq-q">Pfft Rails isn't serverless!</h3>
+    <p class="faq-a">
+      Isn't it? Yea, maybe not, but it can feel close if you use serverless
+      technologies to do your deployment. Then you still get to use Rails!
+    </p>
+
+    <h3 class="mt-24 faq-q">Wait, isn't Rails dead?</h3>
+    <p class="faq-a text-6xl neon" x-data='twiddler()' x-init='init()'>
+      <span x-show='state'>¯\_(ツ)_/¯</span>
+      <span x-show='!state'>_(ツ)_</span>
+    </p>
+
+    <h3 class="mt-24 faq-q">It's pronounced 'jif'.</h3>
+    <p class="faq-a">
+      <tt>:nods:</tt>, but that's not a question.
+    </p>
+  </div>
+</main>

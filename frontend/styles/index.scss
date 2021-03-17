@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+
+
+:root {
+  --neon-blue: #E1F0FF;
+}
+
+html {
+  font-family: Inter, -apple-system, sans-serif;
+  @apply bg-gray-900;
+  @apply text-gray-200;
+}
+
+a.ext-link {
+  color: var(--neon-blue);
+  text-decoration: underline;
+}
+a.ext-link:hover {
+  animation: neon .08s ease-in-out infinite alternate;
+}
+
+.button {
+  @apply py-3 px-6 text-lg font-bold rounded-lg shadow-md;
+  @apply cursor-pointer;
+  @apply text-white bg-gray-800;
+  @apply hover:bg-gray-700 hover:text-neon-blue;
+}
+
+.logotype {
+  font-family: Dancing Script;
+  font-size: 5.5rem;
+  text-align: center;
+  line-height: 1;
+}
+.caveat {
+  @apply text-lg text-gray-400;
+  margin-left: 0;
+}
+@screen lg {
+  .logotype {
+    font-size: 12rem;
+  }
+  .caveat {
+    @apply -mt-4;
+    margin-left: -26rem;
+  }
+}
+
+.coming-soon-msg {
+  @apply text-5xl font-bold bg-gray-800;
+  @apply py-10 px-12 rounded-3xl;
+  color: var(--neon-blue);
+}
+
+.service-item {
+  background: #112;
+  @apply border-gray-800;
+  @apply text-4xl;
+  @apply py-8 rounded-3xl;
+  @apply border-8 border-double;
+  @apply shadow-lg;
+}
+.service-item a {
+  text-decoration: none;
+}
+
+.faq-q {
+  @apply text-gray-600 text-3xl font-bold;
+  @apply text-shadow-sm;
+  @apply mb-4 px-4;
+}
+.faq-a {
+  @apply text-xl px-4;
+}
+@screen lg {
+  .faq-q {
+    @apply text-6xl px-0;
+  }
+  .faq-a {
+    @apply px-32;
+  }
+}
+
+.dancing {
+  font-family: Dancing Script;
+}
+
+.neon {
+  text-shadow:
+    0 0 6px rgba(202,228,225,0.92),
+    0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(30,132,242,0.52),
+    0 0 21px rgba(30,132,242,0.92),
+    0 0 34px rgba(30,132,242,0.78),
+    0 0 54px rgba(30,132,242,0.92);
+  color: var(--neon-blue);
+}
+.neon.animated {
+  animation: neon .08s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+  from {
+    text-shadow:
+      0 0 6px rgba(202,228,225,0.92),
+      0 0 30px rgba(202,228,225,0.34),
+      0 0 12px rgba(30,132,242,0.52),
+      0 0 21px rgba(30,132,242,0.92),
+      0 0 34px rgba(30,132,242,0.78),
+      0 0 54px rgba(30,132,242,0.92);
+  }
+  to {
+    text-shadow:
+      0 0 6px rgba(202,228,225,0.98),
+      0 0 30px rgba(202,228,225,0.42),
+      0 0 12px rgba(30,132,242,0.58),
+      0 0 22px rgba(30,132,242,0.84),
+      0 0 38px rgba(30,132,242,0.88),
+      0 0 60px rgba(30,132,242,1);
+  }
+}
+
+@tailwind utilities;
+
+
+@layer utilities {
+  @variants responsive {
+    .text-shadow-sm {
+      text-shadow: 2px 2px 2px black;
+    }
+    .text-shadow {
+      text-shadow: 2px 2px 4px black;
+    }
+    .text-shadow-md {
+      text-shadow: 4px 4px 8px black;
+    }
+    .text-shadow-lg {
+      text-shadow: 15px 15px 30px black;
+    }
+    .text-shadow-none {
+      text-shadow: none;
+    }
+  }
+}

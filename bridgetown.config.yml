@@ -1,0 +1,7 @@
+baseurl: ""
+url: "https://serverless-rails.com"
+
+permalink: pretty
+content_engine: resource
+
+timezone: America/Toronto
