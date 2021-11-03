@@ -10,6 +10,7 @@ html {
   font-family: Inter, -apple-system, sans-serif;
   @apply bg-gray-900;
   @apply text-gray-200;
+  @apply mx-2 lg:mx-0;
 }
 
 a.ext-link {
@@ -48,7 +49,8 @@ a.ext-link:hover {
 }
 
 .coming-soon-msg {
-  @apply text-5xl font-bold bg-gray-800;
+  @apply text-xl lg:text-5xl;
+  @apply font-bold bg-gray-800;
   @apply py-10 px-12 rounded-3xl;
   color: var(--neon-blue);
 }
@@ -66,20 +68,13 @@ a.ext-link:hover {
 }
 
 .faq-q {
-  @apply text-gray-600 text-3xl font-bold;
+  @apply text-gray-600 font-bold;
+  @apply text-3xl lg:text-6xl;
   @apply text-shadow-sm;
-  @apply mb-4 px-4;
+  @apply mb-4 px-4 lg:px-0;
 }
 .faq-a {
-  @apply text-xl px-4;
-}
-@screen lg {
-  .faq-q {
-    @apply text-6xl px-0;
-  }
-  .faq-a {
-    @apply px-32;
-  }
+  @apply text-xl px-4 lg:px-32;
 }
 
 .dancing {
