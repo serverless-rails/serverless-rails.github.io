@@ -48,11 +48,18 @@ a.ext-link:hover {
   }
 }
 
-.coming-soon-msg {
+.external-link {
   @apply text-xl lg:text-5xl;
   @apply font-bold bg-gray-800;
   @apply py-10 px-12 rounded-3xl;
   color: var(--neon-blue);
+  @apply flex items-center;
+}
+.external-link:hover {
+  color: white;
+}
+.external-link svg {
+  @apply mx-3;
 }
 
 .service-item {
