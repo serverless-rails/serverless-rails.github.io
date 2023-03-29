@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Index | Serverless Rails</title>
+
+    <meta name="description" content="Learn how to deploy a dockerised Ruby on Rails application on AWS using only 'serverless' products." />
+    <meta name="build_time" content="2023-03-29 10:52 EDT" />
+
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Inter:300,400,600&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/_bridgetown/static/css/main.5d8d75df5ac4ad8f2dbf.css" />
+  </head>
+  <body>
+    <main class="container mx-auto text-center">
+  <div class="xl:max-w-screen-xl md:pt-36 pb-36 max-w-screen-lg pt-10 mx-auto">
+    <h1 class="logotype neon animated">Serverless Rails</h1>
+    <div class="caveat">Sort of!?</div>
+  </div>
+
+  <div class="flex justify-center mt-0 mb-6">
+    <a class="external-link text-shadow-sm" href="https://github.com/serverless-rails/serverless-rails-demo">
+      It's on
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="46" height="46">
+        <path stroke-width="0" fill="currentColor"
+          d="M32 0 C14 0 0 14 0 32 0 53 19 62 22 62 24 62 24 61 24 60 L24 55 C17 57 14 53 13 50 13 50 13 49 11 47 10 46 6 44 10 44 13 44 15 48 15 48 18 52 22 51 24 50 24 48 26 46 26 46 18 45 12 42 12 31 12 27 13 24 15 22 15 22 13 18 15 13 15 13 20 13 24 17 27 15 37 15 40 17 44 13 49 13 49 13 51 20 49 22 49 22 51 24 52 27 52 31 52 42 45 45 38 46 39 47 40 49 40 52 L40 60 C40 61 40 62 42 62 45 62 64 53 64 32 64 14 50 0 32 0 Z" />
+      </svg>
+      GitHub
+    </a>
+  </div>
+
+  <!-- <div class="mb-36 flex justify-center mt-0">
+    <a class="external-link text-shadow-sm" href="https://serverless-rails-demo.lol">
+      ...and there's a demo <small class="ml-2 text-xs font-normal align-bottom">(sometimes)</small>
+    </a>
+  </div> -->
+
+  <div class="md:mt-36 max-w-screen-md mx-auto mt-0">
+    <p class="text-neon-blue text-2xl text-center">
+      Learn how to deploy a dockerised Ruby on Rails application
+      on AWS using only 'serverless' products:
+    </p>
+  </div>
+
+  <div class="max-w-screen-lg mx-auto mt-8">
+    <ul class="lg:grid-cols-3 md:px-0 grid grid-flow-row grid-cols-1 grid-rows-2 gap-4 px-2">
+      <li class="service-item neon dancing">Fargate (ECS)</li>
+      <li class="service-item neon dancing">Aurora Serverless</li>
+      <li class="service-item neon dancing">S3 & CloudFront</li>
+      <li class="service-item neon dancing">Elasticache</li>
+      <li class="service-item neon dancing">Route53 & ACM</li>
+      <li class="service-item neon dancing">SSM Parameters</li>
+    </ul>
+  </div>
+
+  <div class="mt-36 mb-36 max-w-screen-lg mx-auto">
+    <h3 class="faq-q mt-24">I'm supposed to click through all that in the AWS Console?</h3>
+    <p class="faq-a">
+      What? No, silly! It's provisioned with&nbsp;
+      <a class="ext-link" href="http://terraform.io">Terraform</a>,
+      and nearly zero manual setup in AWS console. Sign up, make an IAM
+      user... that's it!
+      &nbsp;<abbrev class="text-sm text-gray-300 border-b border-dotted cursor-pointer" title="Bring Your Own Domain">
+        BYOD</abbrev>
+    </p>
+
+    <h3 class="faq-q mt-24">So this is a course or a book or something?</h3>
+    <p class="faq-a">
+      It's more like a 'thing on the internet'.
+    </p>
+
+    <h3 class="faq-q mt-24">...but how much does it cost?</h3>
+    <p class="faq-a">
+      How about sending 5% of what you make this month to your favourite charity.<br />
+      Don't have a favourite? Try these:
+    </p>
+    <div class="lg:block flex flex-col mt-6">
+      <a class="button lg:mb-0 mb-1" href="https://girlswhocode.com/en-ca" target="_blank" rel="noopener">Girls Who
+        Code</a>
+      <a class="button" href="https://humanecanada.ca/" target="_blank" rel="noopener">Humane Canada</a>
+    </div>
+  </div>
+
+  <div class="md:mt-28 max-w-screen-md mx-auto mt-0">
+    <p class="text-neon-blue text-2xl text-center">
+      It's mostly vanilla Rails, but in the real world you inevitably end up with
+      extra bits, so this project uses some of those:
+    </p>
+  </div>
+
+  <div class="max-w-screen-lg mx-auto mt-8">
+    <ul class="lg:grid-cols-3 lg:grid-rows-1 md:px-0 grid grid-flow-row grid-cols-1 grid-rows-3 gap-4 px-2">
+      <li class="service-item neon dancing"><a class="ext-link" href="https://github.com/heartcombo/devise"
+          rel="noreferrer" target="_blank">Devise</a></li>
+      <li class="service-item neon dancing"><a class="ext-link" href="https://sidekiq.org/" rel="noreferrer"
+          target="_blank">Sidekiq</a></li>
+      <li class="service-item neon dancing"><a class="ext-link" href="https://anycable.io/" rel="noreferrer"
+          target="_blank">AnyCable</a></li>
+    </ul>
+  </div>
+
+  <div class="max-w-screen-lg mx-auto mt-40 mb-40">
+    <h3 class="faq-q">Pfft Rails isn't serverless!</h3>
+    <p class="faq-a">
+      Isn't it? Ok, maybe not, but it can feel close if you use serverless
+      technologies to do your deployment. Then you still get to use Rails.
+    </p>
+
+    <h3 class="faq-q mt-24">Wait, isn't Rails dead?</h3>
+    <p class="faq-a neon text-6xl" x-data='twiddler()' x-init='init()'>
+      <span x-show='state'>¯\_(ツ)_/¯</span>
+      <span x-show='!state'>_(ツ)_</span>
+    </p>
+
+    <h3 class="faq-q mt-24">It's pronounced 'jif'.</h3>
+    <p class="faq-a">
+      <tt>:nods:</tt>
+    </p>
+  </div>
+
+  <div class="mb-36 flex justify-center mt-0">
+    <a class="external-link text-shadow-sm" href="https://github.com/serverless-rails/serverless-rails-demo">
+      It's on
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="46" height="46">
+        <path stroke-width="0" fill="currentColor"
+          d="M32 0 C14 0 0 14 0 32 0 53 19 62 22 62 24 62 24 61 24 60 L24 55 C17 57 14 53 13 50 13 50 13 49 11 47 10 46 6 44 10 44 13 44 15 48 15 48 18 52 22 51 24 50 24 48 26 46 26 46 18 45 12 42 12 31 12 27 13 24 15 22 15 22 13 18 15 13 15 13 20 13 24 17 27 15 37 15 40 17 44 13 49 13 49 13 51 20 49 22 49 22 51 24 52 27 52 31 52 42 45 45 38 46 39 47 40 49 40 52 L40 60 C40 61 40 62 42 62 45 62 64 53 64 32 64 14 50 0 32 0 Z" />
+      </svg>
+      GitHub
+    </a>
+  </div>
+</main>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js"></script>
+    <script src="/_bridgetown/static/js/main.e1689771fd9f33648b2f.js"></script>
+  </body>
+</html>
