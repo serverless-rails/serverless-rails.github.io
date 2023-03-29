@@ -1,7 +1,6 @@
-
 import "index.scss"
 
-window.twiddler = function() {
+window.twiddler = function () {
   return {
     state: 0,
     toggleState() {

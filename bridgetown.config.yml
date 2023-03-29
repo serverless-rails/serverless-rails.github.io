@@ -1,5 +1,7 @@
 baseurl: ""
-url: "https://serverless-rails.com"
+url: "https://serverless-rails.github.io"
+
+destination: dist
 
 permalink: pretty
 content_engine: resource

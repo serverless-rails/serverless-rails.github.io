@@ -1,12 +1,14 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ManifestPlugin = require("webpack-manifest-plugin");
 
 module.exports = {
   entry: {
     main: "./frontend/javascript/index.js"
   },
-  devtool: "source-map",
+  devtool: false,
   // Set some or all of these to true if you want more verbose logging:
   stats: {
     modules: false,
@@ -15,7 +17,7 @@ module.exports = {
     children: false,
   },
   output: {
-    path: path.resolve(__dirname, "output", "_bridgetown", "static", "js"),
+    path: path.resolve(__dirname, "dist", "_bridgetown", "static", "js"),
     filename: "[name].[contenthash].js",
   },
   resolve: {
@@ -43,20 +45,7 @@ module.exports = {
         test: /\.(js|jsx)/,
         use: {
           loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
-            plugins: [
-              ["@babel/plugin-proposal-decorators", { "legacy": true }],
-              ["@babel/plugin-proposal-class-properties", { "loose" : true }],
-              ["@babel/plugin-proposal-private-methods", { "loose": true }],
-              [
-                "@babel/plugin-transform-runtime",
-                {
-                  helpers: false,
-                },
-              ],
-            ],
-          },
+          options: { presets: ["@babel/preset-env"] },
         },
       },
 
@@ -66,32 +55,18 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
-            options: {
-              url: url => !url.startsWith('/')
-            }
+            options: { url: url => !url.startsWith('/') }
           },
           "postcss-loader"
         ],
       },
-
-      {
-        test: /\.woff2?$|\.ttf$|\.eot$/,
-        loader: "file-loader",
-        options: {
-          name: "[name]-[contenthash].[ext]",
-          outputPath: "../fonts",
-          publicPath: "../fonts",
-        },
-      },
-      {
-        test: /\.png?$|\.gif$|\.jpg$|\.svg$/,
-        loader: "file-loader",
-        options: {
-          name: "[path][name]-[contenthash].[ext]",
-          outputPath: "../",
-          publicPath: "../",
-        },
-      },
+    ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new UglifyJsPlugin(),
     ],
   },
 };
