@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "bundle exec bridgetown build",
+    "build": "yarn clean && yarn webpack-build && bundle exec bridgetown build",
     "serve": "bundle exec bridgetown serve",
     "clean": "bundle exec bridgetown clean",
     "webpack-build": "webpack --mode production",
     "webpack-dev": "webpack --mode development -w",
-    "release": "yarn clean && yarn webpack-build && yarn build",
+    "release": "git subtree push --prefix dist origin gh-pages",
     "sync": "node sync.js",
     "start": "node start.js"
   },
