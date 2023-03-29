@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "yarn clean && yarn webpack-build && bundle exec bridgetown build",
+    "build": "yarn clean && yarn webpack-build && bundle exec bridgetown build && touch dist/.nojekyll",
     "serve": "bundle exec bridgetown serve",
     "clean": "bundle exec bridgetown clean",
     "webpack-build": "webpack --mode production",
