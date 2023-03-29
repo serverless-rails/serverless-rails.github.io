@@ -1,7 +1,7 @@
 # Serverless Rails
 
 Static site repo for
-https://serverless-rails.com
+https://serverless-rails.github.io
 
 
 ### Requirements
@@ -12,7 +12,11 @@ https://serverless-rails.com
 ### Usage
 
 ```
-git clone git@github.com:serverless-rails/serverless-rails-com.git sr-com && cd $_
+git clone git@github.com:serverless-rails/serverless-rails-com.git sr-site && cd $_
 bundle && yarn
 yarn start
+```
+
+```
+yarn build && git commit -am 'rebuild' && yarn release
 ```
